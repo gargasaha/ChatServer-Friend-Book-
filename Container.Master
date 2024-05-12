@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Container.master.cs" Inherits="FinalYearProject.Container" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+<body>
+    <script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () {
+        null
+    };
+    
+    </script>
+    <form id="form1" runat="server">
+        <%--<div style="background-color: #d51852; display: flex; justify-content: center; margin: 0px 30px 0px 30px; border-top-left-radius: 50px; border-top-right-radius: 50px;">
+            <div style="text-align: center; font-family: 'Castellar'; font-size: 70px; width: max-content; color: #ffffff">
+                Friend Book
+            </div>
+        </div>--%>
+        <div style="display: flex;padding:0;margin:0;">
+            <div style="width: 100px; height: 100vh; background-color: lightgray">
+                <div style="text-align: center; padding: 10px">
+                    <%--<image src="~\IMAGES\go.jpg" style="border-radius: 50%" height="50" width="60"></image>--%>
+                    <asp:Image runat="server" ImageUrl="~/IMAGES/go.jpg" Height="70" Width="70" />
+                </div>
+                <div style="text-align: center; padding: 10px; margin-top: 160px">
+                    <asp:ImageButton runat="server" src="\IMAGES\profileIcon.png" Style="border-radius: 50%" Height="40" Width="50"></asp:ImageButton>
+                </div>
+                <div style="text-align: center; padding: 10px;">
+                    <asp:ImageButton runat="server" src="\IMAGES\settingIcon.png" Style="border-radius: 50%" Height="40" Width="50"></asp:ImageButton>
+                </div>
+                <div style="text-align: center; padding: 10px;">
+                    <asp:ImageButton runat="server" OnClick="gotoaf" ImageUrl="~/IMAGES/addFrnd.png" Height="40" Width="50" />
+                </div>
+
+                <div style="text-align: center; padding: 10px;">
+                    <asp:ImageButton runat="server" OnClick="gotoch" ImageUrl="~/IMAGES/chat.png" Height="40" Width="50" />
+                </div>
+
+                <div style="text-align: center; padding: 10px; margin-top: 180px">
+                    <asp:ImageButton runat="server" ID="usrimg" Style="border-radius: 50%" Height="40" Width="50"></asp:ImageButton>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
